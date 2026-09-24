@@ -32,6 +32,8 @@ class CostmapNode : public rclcpp::Node {
     const int height_ = 400;          // cells
     const double origin_x_ = -20.0;   // bottom-left corner, in meters
     const double origin_y_ = -20.0;
+    const double inflation_radius_ = 1.0;  // meters of "danger zone" around obstacles
+    const double max_cost_ = 100.0;        // cost right at an obstacle
 
     // The grid itself: one number per cell (0 = free, 100 = obstacle)
     std::vector<int8_t> grid_;
